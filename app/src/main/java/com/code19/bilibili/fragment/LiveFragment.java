@@ -2,7 +2,6 @@ package com.code19.bilibili.fragment;
 
 
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,7 +23,7 @@ public class LiveFragment extends BaseFragment {
     @Override
     protected void initData() {
         mData = new ArrayList<>();
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i <30; i++) {
             mData.add("Bean:...." + (i * 2));
         }
     }
@@ -33,9 +32,9 @@ public class LiveFragment extends BaseFragment {
     protected View initView(LayoutInflater inflater) {
         View view = inflater.inflate(R.layout.live_fragment, null);
         mRecyclerView = (RecyclerView) view.findViewById(R.id.live_listview);
-       // mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
-        mRecyclerView.setLayoutManager(new GridLayoutManager(mContext,2));
-        mRecyclerView.setAdapter(new LiveRecyAdpater(mContext, mData));
+        // mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
+        mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
+        mRecyclerView.setAdapter(new LiveRecyAdpater(getActivity(), mData));
         return view;
     }
 

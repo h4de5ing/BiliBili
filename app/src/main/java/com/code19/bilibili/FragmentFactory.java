@@ -4,6 +4,8 @@ package com.code19.bilibili;
 import android.support.v4.app.Fragment;
 import android.util.SparseArray;
 
+import com.code19.bilibili.fragment.DownloadFragment;
+import com.code19.bilibili.fragment.HomeFragment;
 import com.code19.bilibili.fragment.LiveFragment;
 
 
@@ -13,29 +15,29 @@ import com.code19.bilibili.fragment.LiveFragment;
 public class FragmentFactory {
     private static SparseArray<Fragment> map = new SparseArray<Fragment>();
 
-    public static Fragment getFragment(int positon) {
+    public static Fragment getFragment(int position) {
         Fragment fragment = null;
-        if (map.get(positon, fragment) != null) {
-            return map.get(positon);
+        if (map.get(position, fragment) != null) {
+            return map.get(position);
         }
-        switch (positon) {
+        switch (position) {
             case 0:
-                fragment=new LiveFragment();
+                fragment = new HomeFragment();
                 break;
             case 1:
-                fragment=new LiveFragment();
+                fragment = new DownloadFragment();
                 break;
             case 2:
-                fragment=new LiveFragment();
+                fragment = new LiveFragment();
                 break;
             case 3:
-                fragment=new LiveFragment();
+                fragment = new LiveFragment();
                 break;
             case 4:
-                fragment=new LiveFragment();
+                fragment = new LiveFragment();
                 break;
             case 5:
-                fragment=new LiveFragment();
+                fragment = new LiveFragment();
                 break;
         }
         return fragment;

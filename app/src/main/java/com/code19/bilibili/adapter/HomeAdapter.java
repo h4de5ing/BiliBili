@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.code19.bilibili.FragmentFactory;
+import com.code19.bilibili.HomeFragmentFactory;
 
 /**
  * Created by Gh0st on 2016/3/12 012.
@@ -20,7 +20,7 @@ public class HomeAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return FragmentFactory.getFragment(position);
+        return HomeFragmentFactory.getFragment(position);
     }
 
     @Override
